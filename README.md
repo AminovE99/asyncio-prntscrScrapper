@@ -36,3 +36,7 @@ python code-python3.py
 ## :page_facing_up: License
 
 This project is [MIT](uri_license) licensed.
+
+## :thumbsup: Show your support
+
+Give a :star: if this project helped you!
