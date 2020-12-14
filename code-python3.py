@@ -19,7 +19,7 @@ def generate_url(url='http://i.imgur.com/'):
     return url
 
 
-async def scrape_pictures(session):
+async def scrape_pictures():
     INVALID = [0, 503, 5082, 4939, 4940, 4941, 12003, 5556]
     while True:
         url = generate_url()
@@ -50,9 +50,9 @@ async def log_time():
 
 async def main():
     tasks = []
-    async with aiohttp.ClientSession() as session:
+    async with aiohttp.ClientSession():
         for i in range(10):
-            task = asyncio.create_task(scrape_pictures(session))
+            task = asyncio.create_task(scrape_pictures())
             tasks.append(task)
     tasks.append(log_time())
     await asyncio.gather(*tasks)
