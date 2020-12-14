@@ -51,7 +51,7 @@ async def log_time():
 async def main():
     tasks = []
     async with aiohttp.ClientSession() as session:
-        for i in range(2):
+        for i in range(10):
             task = asyncio.create_task(scrape_pictures(session))
             tasks.append(task)
     tasks.append(log_time())
