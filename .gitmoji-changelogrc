@@ -1,7 +1,7 @@
 {
   "project": {
-    "name": "__app_slug__",
-    "description": "__app_description__",
+    "name": "asyncio prntscrScrapper",
+    "description": "Scrapper",
     "version": "0.0.1"
   }
 }
