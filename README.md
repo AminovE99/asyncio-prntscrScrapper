@@ -22,7 +22,7 @@ pip install -r requirements.txt
 ## :rocket: Usage
 
 ```sh
-python code-python3.py
+python scrapper.py
 ```
 
 ## :bust_in_silhouette: Authors

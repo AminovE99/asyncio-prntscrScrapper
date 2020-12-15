@@ -5,7 +5,7 @@ import string
 
 import aiohttp
 
-from constants import DATASET_FOLDER
+from constants import DATASET_FOLDER, INVALID
 
 
 def generate_url(url='http://i.imgur.com/'):
@@ -19,10 +19,14 @@ def generate_url(url='http://i.imgur.com/'):
     return url
 
 
+def get_filename(url):
+    return url.rsplit('/', 1)[-1]
+
+
 async def scrape_pictures():
-    INVALID = [0, 503, 5082, 4939, 4940, 4941, 12003, 5556]
     while True:
         url = generate_url()
+        filename = get_filename(url)
         filename = url.rsplit('/', 1)[-1]
 
         async with aiohttp.request('get', url) as response:
